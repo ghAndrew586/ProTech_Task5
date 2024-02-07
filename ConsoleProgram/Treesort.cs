@@ -1,0 +1,7 @@
+﻿namespace ConsoleProgram
+{
+    class Treesort
+    {
+
+    }
+}
