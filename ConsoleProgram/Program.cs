@@ -9,6 +9,8 @@ namespace ConsoleProgram
     {
         static void Main(string[] args)
         {
+            Quicksort quicksort = new Quicksort();
+
             Console.Write("Введите строку: ");
             
             string inputLine = Console.ReadLine();
@@ -85,7 +87,14 @@ namespace ConsoleProgram
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(" в данной строке!");
             }
+
+            char[] resultLineChars = resultLine.ToCharArray();
             
+            Console.Write("Отсортированная строка: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(quicksort.QuicksortLogic(resultLineChars, 0, resultLineChars.Length - 1));
+            Console.ForegroundColor = ConsoleColor.White;
+
 
             Console.Write(" . . . Нажмите любую кнопку, чтобы выйти; Enter, чтобы перезапустить  . . . ");
             char endKey = Console.ReadKey().KeyChar;
