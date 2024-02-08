@@ -9,8 +9,10 @@ namespace ConsoleProgram
     {
         static void Main(string[] args)
         {
+            Quicksort quicksort = new Quicksort();
+            Treesort treesort = new Treesort();
+
             Console.Write("Введите строку: ");
-            
             string inputLine = Console.ReadLine();
 
             while (!Regex.IsMatch(inputLine, "^[a-z]+$"))
@@ -85,7 +87,31 @@ namespace ConsoleProgram
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(" в данной строке!");
             }
+
+            char chooseSort = '0';
+
+            while (chooseSort != '1' && chooseSort != '2')
+            {
+                Console.Write("1 - quick sort; 2 - tree sort: "); chooseSort = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+            }
+
+            char[] resultLineChars = resultLine.ToCharArray();
             
+            Console.Write("Отсортированная строка: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            if (chooseSort == '1')
+            {
+                Console.Write(quicksort.QuicksortLogic(resultLineChars, 0, resultLineChars.Length - 1)); Console.WriteLine(" (quick sort)");
+            }
+            else if (chooseSort == '2')
+            {
+               Console.Write(treesort.TreeSort(resultLineChars)); Console.WriteLine(" (tree sort)");
+            }
+
+            Console.ForegroundColor = ConsoleColor.White;
+
 
             Console.Write(" . . . Нажмите любую кнопку, чтобы выйти; Enter, чтобы перезапустить  . . . ");
             char endKey = Console.ReadKey().KeyChar;
