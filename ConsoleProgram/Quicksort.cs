@@ -1,8 +1,8 @@
 ﻿namespace ConsoleProgram
 {
+    //From the internet
     class Quicksort
     {
-        //From the internet
         public char[] QuicksortLogic(char[] array, int leftIndex, int rightIndex)
         {
             var i = leftIndex;

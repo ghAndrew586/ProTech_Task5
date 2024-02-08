@@ -10,7 +10,10 @@ namespace ConsoleProgram
         static void Main(string[] args)
         {
             Quicksort quicksort = new Quicksort();
+            Treesort treesort = new Treesort();
+            char[] some = { 'q', 'c', 'b' };
 
+            Console.WriteLine(treesort.TreeSort(some));
             Console.Write("Введите строку: ");
             
             string inputLine = Console.ReadLine();
